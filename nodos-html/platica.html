@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Platica</title>
+  </head>
+
+  <body>
+    <div id="root">
+      <h1>Hola Mundo</h1>
+      <div>
+        <h4>Lista Super</h4>
+        <ul>
+          <li>Manzanas</li>
+          <li>Sandias</li>
+          <li>Leche</li>
+          <li>Huevo</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+        function getCurrentHTMLNode(node) {
+            console.log(node); // Nodo actual
+            // Checa los nodos
+            if (node.hasChildNodes()) {
+            let child = node.firstChild;
+            while (child) {
+                // llamar la funcion recursivamente
+                getCurrentHTMLNode(child);
+                child = child.nextSibling;
+            }
+            }
+        }
+        let root = document.getElementById("root");
+        console.log(getCurrentHTMLNode(root));
+    </script>
+  </body>
+</html>
